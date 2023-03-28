@@ -1,0 +1,9 @@
+## third party packages
+numpy
+pandas
+matplotlib
+scikit-learn
+dvc
+dvc[gdrive]
+
+
