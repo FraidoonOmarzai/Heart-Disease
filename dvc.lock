@@ -1,0 +1,34 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data/heart.csv
+      md5: 4ee20893ad7e2ff8ff5ed8dd0e7f37bc
+      size: 38114
+    - path: src/get_data.py
+      md5: 0d58f4ae0cd250a46519925681ca5147
+      size: 748
+    - path: src/load_data.py
+      md5: a6e70090299b20d59d6fd2217c57cc01
+      size: 582
+    outs:
+    - path: data/raw/heart.csv
+      md5: 36e7c888c3463d297f8213dd92bc7563
+      size: 37970
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/heart.csv
+      md5: 36e7c888c3463d297f8213dd92bc7563
+      size: 37970
+    - path: src/split_data.py
+      md5: 7392436eda73b4ab6c49393b9740f66b
+      size: 1073
+    outs:
+    - path: data/processed/test_heart.csv
+      md5: 8709b30128da6932b94f78d072b1b547
+      size: 7657
+    - path: data/processed/train_heart.csv
+      md5: 56dd910e3f2f000a82499b3930e53edb
+      size: 30393

@@ -23,4 +23,52 @@ touch template.py
 python template.py
 ```
 
-* init the github and push the chenges to github
+* `git init` and push the chenges to github
+
+* get the dataset from [kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset)
+
+```bash
+dvc init
+```
+
+* Add data into dvc for tracking
+```bash
+dvc add data/*.csv
+```
+
+* Add remote storage
+```bash
+dvc remote add -d storage gdrive://<DRIVE ID>
+```
+
+* Push the data to the remote storage
+```bash
+dvc push
+```
+
+* push changes to github
+```bash
+git add . && git commit -m ""
+```
+
+* create src/get_data.py and src/load_data.py
+
+```bash
+touch src/get_data.py src/load_data.py
+```
+
+* add parameters to params.yaml
+
+* add code to get_data.py and load_data.py
+
+* add stage in dvc.yaml and run the below commands
+
+```bash
+dvc repro
+```
+
+* create a split_data file, add a stage in dvc.yaml and run `dvc repro`
+```bash
+touch src/split_data.py
+```
+
