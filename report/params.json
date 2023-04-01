@@ -1,0 +1,4 @@
+{
+    "n_estimators": 300,
+    "criterion": "entropy"
+}

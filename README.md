@@ -80,3 +80,20 @@ touch src/train_and_eval.py
 ```bash
 dvc dag
 ```
+
+* push the chages to github
+
+* tracking params and metrics
+* create, add some codes in dvc.yaml(metrices:), params.yaml and train_and_eval.py
+```bash
+mkdir report
+touch report/params.json
+touch report/scores.json
+```
+
+* after completion run below commands
+```bash
+dvc repro
+dvc metrics show
+dvc metrics diff
+```

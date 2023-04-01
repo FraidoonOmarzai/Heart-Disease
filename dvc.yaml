@@ -26,5 +26,10 @@ stages:
     params:
     - estimators.RandomForestClassifier.params.n_estimators
     - estimators.RandomForestClassifier.params.criterion
+    metrics:
+    - report/scores.json:
+        cache: false
+    - report/params.json:
+        cache: false
     outs:
     - saved_models/model.joblib

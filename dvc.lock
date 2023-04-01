@@ -42,13 +42,19 @@ stages:
       md5: 56dd910e3f2f000a82499b3930e53edb
       size: 30393
     - path: src/train_and_eval.py
-      md5: d6c687ac613a2d3b5177592d98435591
-      size: 2095
+      md5: d1d2f0bd3040ee975ec1fa0e348db502
+      size: 2674
     params:
       params.yaml:
-        estimators.RandomForestClassifier.params.criterion: gini
-        estimators.RandomForestClassifier.params.n_estimators: 10
+        estimators.RandomForestClassifier.params.criterion: entropy
+        estimators.RandomForestClassifier.params.n_estimators: 300
     outs:
+    - path: report/params.json
+      md5: 4d465c10487a1d316951b514b593859c
+      size: 55
+    - path: report/scores.json
+      md5: 760d4da60d4bad725dac39c04b061ce3
+      size: 62
     - path: saved_models/model.joblib
-      md5: 1ebf9cb552c2b04b25d7907aca2ee8a0
-      size: 115632
+      md5: 26c01d4ce0cd0167bb2a3954afcd4868
+      size: 3200384
