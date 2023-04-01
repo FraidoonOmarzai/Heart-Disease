@@ -32,3 +32,23 @@ stages:
     - path: data/processed/train_heart.csv
       md5: 56dd910e3f2f000a82499b3930e53edb
       size: 30393
+  train_and_evaluate:
+    cmd: python src/train_and_eval.py --config=params.yaml
+    deps:
+    - path: data/processed/test_heart.csv
+      md5: 8709b30128da6932b94f78d072b1b547
+      size: 7657
+    - path: data/processed/train_heart.csv
+      md5: 56dd910e3f2f000a82499b3930e53edb
+      size: 30393
+    - path: src/train_and_eval.py
+      md5: d6c687ac613a2d3b5177592d98435591
+      size: 2095
+    params:
+      params.yaml:
+        estimators.RandomForestClassifier.params.criterion: gini
+        estimators.RandomForestClassifier.params.n_estimators: 10
+    outs:
+    - path: saved_models/model.joblib
+      md5: 1ebf9cb552c2b04b25d7907aca2ee8a0
+      size: 115632

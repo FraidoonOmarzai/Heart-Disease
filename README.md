@@ -72,3 +72,11 @@ dvc repro
 touch src/split_data.py
 ```
 
+* create train_and_evaluate file, add a stage in dvc.yaml and run dvc repro
+```bash
+touch src/train_and_eval.py
+```
+* visualize dvc pipeline
+```bash
+dvc dag
+```
