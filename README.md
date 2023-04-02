@@ -2,6 +2,10 @@
 
 **Note:** First we work on jupyter-notebook and after knowing the alg and everything we come to these steps!
 
+
+*******************************************************************************************************************
+
+
 ## Steps
 
 * Create an environment and acitvate it
@@ -97,3 +101,12 @@ dvc repro
 dvc metrics show
 dvc metrics diff
 ```
+
+*******************************************************************************************************************
+
+* **flask app** create the required dir and files and add code to it
+
+* Alhamdulillah Done Successfully!
+
+*******************************************************************************************************************
+
