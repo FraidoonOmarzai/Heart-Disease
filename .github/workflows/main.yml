@@ -1,0 +1,31 @@
+name: DVC Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-dvc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install DVC
+        run: |
+          pip install dvc
+
+      - name: Set up DVC cache
+        run: |
+          dvc cache dir default s3://your-s3-bucket/path
+          dvc cache remote default
+
+      - name: Pull DVC files
+        run: |
+          dvc pull
+
+      - name: Run DVC commands
+        run: |
+          dvc repro
