@@ -16,13 +16,6 @@ jobs:
       - name: Install DVC
         run: |
           pip install dvc
-      
-      - name: Install gdrive
-        uses: act10ns/setup-gdrive@v1
-
-      - name: Pull DVC files
-        run: |
-          dvc pull
 
       - name: Run DVC commands
         run: |
