@@ -13,12 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install gdrive
-        run: |
-          wget -O gdrive "https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64"
-          chmod +x gdrive
-          sudo mv gdrive /usr/local/bin/
-
+      - name: Setup gdrive
+        uses: AnimMouse/setup-gdrive@v3
+        
       - name: Authenticate with Google Drive
         run: |
           echo "${{ secrets.GOOGLE_DRIVE_TOKEN }}" | gdrive about
