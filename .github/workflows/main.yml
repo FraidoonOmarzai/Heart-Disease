@@ -1,4 +1,4 @@
-name: DVC Workflow
+name: DVC Workflow with Google Drive
 
 on:
   push:
@@ -13,9 +13,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install gdrive
+        run: |
+          wget -O gdrive "https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64"
+          chmod +x gdrive
+          sudo mv gdrive /usr/local/bin/
+
+      - name: Authenticate with Google Drive
+        run: |
+          echo "${{ secrets.GOOGLE_DRIVE_TOKEN }}" | gdrive about
+
       - name: Install DVC
         run: |
           pip install dvc
+
+      - name: Configure DVC with Google Drive
+        run: |
+          dvc remote add -d my_google_drive gdrive://your-google-drive-folder-id
+
+      - name: Pull DVC files
+        run: |
+          dvc pull
 
       - name: Run DVC commands
         run: |
