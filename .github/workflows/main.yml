@@ -17,11 +17,6 @@ jobs:
         run: |
           pip install dvc
 
-      - name: Set up DVC cache
-        run: |
-          dvc cache dir default s3://your-s3-bucket/path
-          dvc cache remote default
-
       - name: Pull DVC files
         run: |
           dvc pull
