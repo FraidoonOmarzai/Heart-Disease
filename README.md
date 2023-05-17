@@ -102,6 +102,15 @@ dvc metrics show
 dvc metrics diff
 ```
 
+
+*******************************************************************************************************************
+* Adding Github action to our project (CI/CD)
+* create the required dir and file and add code to it
+```bash
+mkdir .github/workflows
+touch .github/workflows/ci-cd.yaml
+```
+
 *******************************************************************************************************************
 
 * **flask app** create the required dir and files and add code to it
