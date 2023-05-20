@@ -13,9 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Install DVC
-        run: |
-          pip install dvc
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+        with:
+          path: "path/to/requirements.txt"
 
       - name: Setup gdrive
         uses: AnimMouse/setup-gdrive@v3
