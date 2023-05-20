@@ -17,6 +17,8 @@ jobs:
         uses: py-actions/py-dependency-install@v4
         with:
           path: "requirements.txt"
+      
+      - uses: iterative/setup-dvc@v1
 
       - name: Setup gdrive
         uses: AnimMouse/setup-gdrive@v3
