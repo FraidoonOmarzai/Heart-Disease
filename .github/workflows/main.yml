@@ -20,20 +20,20 @@ jobs:
       
       - uses: iterative/setup-dvc@v1
 
-      - name: Setup gdrive
-        uses: AnimMouse/setup-gdrive@v3
+#       - name: Setup gdrive
+#         uses: AnimMouse/setup-gdrive@v3
         
-      - name: Authenticate with Google Drive
-        run: |
-          echo "${{ secrets.GOOGLE_DRIVE_TOKEN }}" | gdrive about
+#       - name: Authenticate with Google Drive
+#         run: |
+#           echo "${{ secrets.GOOGLE_DRIVE_TOKEN }}" | gdrive about
 
-      - name: Configure DVC with Google Drive
-        run: |
-          dvc remote add -d my_google_drive gdrive://your-google-drive-folder-id
+#       - name: Configure DVC with Google Drive
+#         run: |
+#           dvc remote add -d my_google_drive gdrive://your-google-drive-folder-id
 
-      - name: Pull DVC files
-        run: |
-          dvc pull
+#       - name: Pull DVC files
+#         run: |
+#           dvc pull
 
       - name: Run DVC commands
         run: |
