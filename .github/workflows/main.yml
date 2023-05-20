@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Install DVC
+        run: |
+          pip install dvc
 
       - name: Setup gdrive
         uses: AnimMouse/setup-gdrive@v3
@@ -19,10 +23,6 @@ jobs:
       - name: Authenticate with Google Drive
         run: |
           echo "${{ secrets.GOOGLE_DRIVE_TOKEN }}" | gdrive about
-
-      - name: Install DVC
-        run: |
-          pip install dvc
 
       - name: Configure DVC with Google Drive
         run: |
